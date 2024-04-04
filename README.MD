@@ -11,7 +11,7 @@
 <h4>Base de donnees H2</h4>
 <img src="Captures/DBH2Patient.png">
 <h4>Base de donnees MySql</h4>
-<img src="Captures/PatientMySql.png">
+<img src="Captures/PatientMysql.png">
 <h4>Controller liste patients</h4>
 <img src="Captures/Controller1.png">
 <h4>Liste patients</h4>

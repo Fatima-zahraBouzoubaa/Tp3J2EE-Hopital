@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1"
+    >
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,13 +11,15 @@
 
 </head>
 <body>
+    <div layout:fragment="content1">
+
     <div class="p-3">
         <div class="card">
-            <div class="card-header">List Patients</div>
+            <div class="card-header">Liste Patients</div>
             <div class="card-body">
                 <form method="get" th:action="@{index}">
                    <label>Keyword: </label>
-                    <input class="form-control" type="text" name="keyword" th:value="${keyword}">
+                    <input type="text" name="keyword" th:value="${keyword}">
                     <button type="submit" class="btn btn-info">
                         <i class="bi bi-search"></i>
 
@@ -36,7 +41,14 @@
                             <!--On envoie l'id, le keyword et le num de page au controller
                             pour supprimer et rester sur la meme page-->
                             <a onclick="return confirm('Etes vous sure?')"
-                               th:href="@{delete(id=${p.id}, keyword=${keyword}, page=${currentPage})}" class="btn btn-danger">Delete</a>
+                               th:href="@{delete(id=${p.id}, keyword=${keyword}, page=${currentPage})}" class="btn btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{editPatient(id=${p.id}, keyword=${keyword}, page=${currentPage})}" class="btn btn-success">
+                                <i class="bi bi-pencil"></i>
+                            </a>
                         </td>
 
                     </tr>
@@ -57,6 +69,6 @@
         </div>
 
     </div>
-
+    </div>
 </body>
 </html>

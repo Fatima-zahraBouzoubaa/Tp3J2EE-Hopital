@@ -12,7 +12,7 @@ import java.util.Date;
 
 @SpringBootApplication
 public class HopitalTp3Application implements CommandLineRunner {
-	@Autowired
+	 @Autowired
 	private PatientRepository patientRepository;
 
 	public static void main(String[] args) {
@@ -39,9 +39,9 @@ public class HopitalTp3Application implements CommandLineRunner {
 //				.score(56)
 //				.malade(true)
 //				.build();
-		patientRepository.save(new Patient(null,"Mohamed",new Date(),false,34));
-		patientRepository.save(new Patient(null,"Hanane",new Date(),false,4321));
-		patientRepository.save(new Patient(null,"Imane",new Date(),true,123));
+		//patientRepository.save(new Patient(null,"Mohamed",new Date(),false,34));
+		//patientRepository.save(new Patient(null,"Hanane",new Date(),false,4321));
+		//patientRepository.save(new Patient(null,"Imane",new Date(),true,123));
 	}
 
 
